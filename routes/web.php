@@ -13,3 +13,7 @@ Route::get('/about', function () {
 Route::get('/posts', function () {
     return view('posts');
 });
+
+Route::get('/store', function () {
+    return view('storeinventory');
+});
