@@ -17,3 +17,7 @@ Route::get('/posts', function () {
 Route::get('/store', function () {
     return view('storeinventory');
 });
+
+Route::get('/diaryentries', function () {
+    return view('diaryentries');
+});
