@@ -5,5 +5,6 @@
     <li><a href="/posts">Posts</a></li>
     <li><a href="/store">Store</a></li>
     <li><a href="/diaryentries">Diary</a></li>
+    <li><a href="/crud_system">CRUD</a></li>
 </ul>
 <hr /><br /><br />

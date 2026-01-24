@@ -21,3 +21,7 @@ Route::get('/store', function () {
 Route::get('/diaryentries', function () {
     return view('diaryentries');
 });
+
+Route::get('/crud_system', function () {
+    return view('crud_system');
+});

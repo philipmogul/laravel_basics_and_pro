@@ -6,6 +6,9 @@
 
         <title>{{ config('app.name', 'Laravel') }}</title>
 
+        <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600" rel="stylesheet" />
@@ -29,6 +32,8 @@
         </main>
         <footer class="w-full max-w-3xl mt-8 lg:mt-12">
             @yield('larafooter')
+             <!-- Bootstrap JS (Footer) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
         </footer>
     </body>
 </html>
