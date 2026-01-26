@@ -1,7 +1,7 @@
 @extends('layouts.index_default')
 
 @section('laraheader')
-    <h1> Welcome To The Index Page </h1>
+    <h1> WELCOME TO: CRUD-MASTER! </h1>
 @endsection
 
 @section('laracontent')

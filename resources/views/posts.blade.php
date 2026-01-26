@@ -14,19 +14,38 @@
     <div>
         <p>I have created the posts using models!</p>
         <p>I have used: php artisan make:model Posts -mcr </p>
-        <p>MODELS ARE USUALLY USED FOR INTERACTING WITH THE DATABASE.</p>
-        <p> In the Models/ModelName, create columns which user can interact with, 
-            using: protected $fillable = ['columnname','columnname']; </p>
-        <p> THE CONTROLLER HAS ACCESS TO THE MODELS.</p>
-        <p> The next step is, GO TO MIGRATIONS, ADD COLUMNS TO THE TABLES, THEN: </p>
         <p> php artisan migrate </p>
         <p> If you made a mistake, you can rollback with: php artisan migrate:rollback </p>
         <p> To roll back a specific migration from a many previous migrations, 
             you can use: php artisan migrate:rollback --path=database/migrations/database/migrations/2026_01_22_132352_create_posts_table.php </p>
         </p>
         <p> To rerun all migrations, use php artisan migrate:refresh </p>
+        <p> Pre inserting to db, go to Models and include columns from migrations 
+            to be inserted: e.g. 
+            protected $fillable = [
+                'title',
+                'content',
+                'hashtags',
+            ]; 
+        </p>
     </div>
                 </div>
+            <hr />
+
+            <div class="row">
+                <div class="col-md-12">
+                    <h3> Posts List </h3>
+                    <?php /*@foreach($posts as $post)
+                        <div class="card mb-3">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ $post->title }}</h5>
+                                <p class="card-text">{{ $post->body }}</p>
+                            </div>
+                        </div>
+                    @endforeach */ ?>
+                </div>
+            </div>
+
             </div>
         </div>
     </div>
