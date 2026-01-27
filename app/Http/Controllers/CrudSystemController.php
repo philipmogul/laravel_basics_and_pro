@@ -12,7 +12,8 @@ class CrudSystemController extends Controller
      */
     public function index()
     {
-        //
+        $crud_systems = crud_system::all();
+        return view('crud_system.index', compact('crud_systems'));
     }
 
     /**
@@ -20,7 +21,7 @@ class CrudSystemController extends Controller
      */
     public function create()
     {
-        //
+        return view('crud_system.create');
     }
 
     /**
@@ -28,7 +29,15 @@ class CrudSystemController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'name' => 'required|max:255',
+            'description' => 'required',
+            'quantity' => 'required|integer',
+        ]);
+
+        crud_system::create($validatedData);
+
+        return redirect()->route('crud_system.index')->with('success', 'Item created successfully.');
     }
 
     /**
@@ -36,30 +45,42 @@ class CrudSystemController extends Controller
      */
     public function show(crud_system $crud_system)
     {
-        //
+        return view('crud_system.show', compact('crud_system'));
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(crud_system $crud_system)
+    public function edit($id)
     {
-        //
+        $crud_system = crud_system::findOrFail($id);
+        return view('crud_system.edit', compact('crud_system'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, crud_system $crud_system)
+    public function update(Request $request, $id)
     {
-        //
+        $validatedData = $request->validate([
+            'name' => 'required|max:255',
+            'description' => 'required',
+            'quantity' => 'required|integer',
+        ]);
+
+        $crud_system = crud_system::findOrFail($id);
+        $crud_system->update($validatedData);
+
+        return redirect()->route('crud_system.index')->with('success', 'Item updated successfully.');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(crud_system $crud_system)
+    public function destroy($id)
     {
-        //
+        $crud_system = crud_system::findOrFail($id);
+        $crud_system->delete();
+        return redirect()->route('crud_system.index')->with('success', 'Item deleted successfully.');
     }
 }

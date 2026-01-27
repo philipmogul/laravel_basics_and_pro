@@ -3,8 +3,10 @@
 use Illuminate\Support\Facades\Route;
 // include controllers to be referenced for post routes
 use App\Http\Controllers\PostsController;
+use App\Http\Controllers\CrudSystemController;
 
 Route::resource('posts', PostsController::class);
+Route::resource('crud_system', CrudSystemController::class);
 
 Route::get('/', function () {
     return view('welcome');
