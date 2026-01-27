@@ -11,7 +11,7 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="container">
-                    <div class="row">Create User Posts</div>
+                    <div class="row">Create User Posts</div>   
                     <div> <h2>Create User Posts Content</h2></div>
     <div>
         <p>This is the create user posts page.</p>
@@ -33,6 +33,15 @@
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
+        @if ($errors->any())
+            <div class="alert alert-danger mt-3">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
     </div>
                 </div>
             </div>
