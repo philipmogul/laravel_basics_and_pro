@@ -8,6 +8,10 @@
             </li>
 
             <li class="nav-item">
+                <a class="nav-link" href="{{ url('/user_profiles') }}">Profiles</a>
+            </li>
+
+            <li class="nav-item">
                 <a class="nav-link" href="{{ url('/about') }}">About</a>
             </li>
 
