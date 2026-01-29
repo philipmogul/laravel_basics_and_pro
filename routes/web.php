@@ -1,31 +1,20 @@
 <?php
 
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
-// include controllers to be referenced for post routes
-use App\Http\Controllers\PostsController;
-use App\Http\Controllers\CrudSystemController;
-use App\Http\Controllers\UserProfilesController;
-
-Route::resource('posts', PostsController::class);
-Route::resource('crud_system', CrudSystemController::class);
-Route::resource('user_profiles', UserProfilesController::class);
 
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/about', function () {
-    return view('about');
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::get('/store', function () {
-    return view('storeinventory');
-});
-
-Route::get('/diaryentries', function () {
-    return view('diaryentries');
-});
-
-Route::get('/crud_system', function () {
-    return view('crud_system');
-});
+require __DIR__.'/auth.php';
