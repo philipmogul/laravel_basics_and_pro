@@ -20,6 +20,12 @@
                         <div>
                             <img src="{{ asset('images/ROG STRIX G16 MAIN.png') }}" alt="Products" />
                         </div>
+                        <div>
+                            <img src="{{ asset('images/lock.png') }}" alt="Products" />
+                        </div>
+                        <div>
+                            <img src="{{ asset('images/bg.png') }}" alt="Products" />
+                        </div>
                     </div>
                     
                 </div>
