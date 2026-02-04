@@ -11,17 +11,16 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="container">
-                    <div class="row">Create User Posts</div>   
                     <div> <h2>Create User Posts Content</h2></div>
     <div>
         <p>This is the create user posts page.</p>
-        <p>Here you can add a form to create new user posts.</p>
+        <p>Create: Title, Content & Hashtags Below:</p><hr /><br /><br />
 
         <form method="POST" action="{{ route('posts.store') }}">
             @csrf
             <div class="form-group">
                 <label for="title">Title</label>
-                <input type="text" class="form-control" id="title" name="title" value="{{old('title')}}" required>
+                <input type="text" autofocus class="form-control" id="title" name="title" value="{{old('title')}}" required>
             </div>
             <div class="form-group">
                 <label for="content">Content</label>
