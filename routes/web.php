@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostsController;
 use App\Models\Post;
 use App\Http\Controllers\CrudSystemController;
+use App\Http\Controllers\UserLoginsAppController;
 
 
 Route::get('/', function () {
@@ -24,5 +25,7 @@ Route::middleware('auth')->group(function () {
 #  Posts Resource Routes
 Route::resource('/posts', PostsController::class);
 
+// User-login-app index 
+Route::resource('/user-login-app', UserLoginsAppController::class);
 
 require __DIR__.'/auth.php';
