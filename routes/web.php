@@ -28,4 +28,7 @@ Route::resource('/posts', PostsController::class);
 // User-login-app index 
 Route::resource('/user-login-app', UserLoginsAppController::class);
 
+// Route for laravel confirm delete 
+
+
 require __DIR__.'/auth.php';
