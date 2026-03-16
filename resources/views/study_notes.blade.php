@@ -20,7 +20,7 @@ php artisan preset boost
 7. create views for user interface to be connected to the controller for CRUD operations 
 
 
-
+### ANOTHER CRUD SYSTEM: LARAVEL CONFIRM BEFORE DELETE DIALOG APPLICATION 
 
 
 
