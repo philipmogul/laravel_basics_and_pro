@@ -17,7 +17,7 @@
             Steps in this tutorial:
             <ol>
                 <li>Create a controller</li>
-                <li>Use artisan tinker to create dummy data</li>
+                <li>Use artisan tinker to create dummy data. php artisan tinker. Then User::factory()->count(50)->create()</li>
                 <li>Define routes in web.php</li>
                 <li>Create a foreach loop to display user data from db</li>
                 <li>Use blade directives to create links for edit and delete operations</li>
@@ -25,6 +25,40 @@
                 <li>Use controller methods to handle edit and delete operations</li>
             </ol>
         </p>
+
+        <h2>Users List</h2>
+        
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+        @foreach($users as $user)
+            <tr>
+                <td>{{ $user->id }}</td>
+                <td>{{ $user->name }}</td>
+                <td>{{ $user->email }}</td>
+                <td>
+                    <a href="{{ route('usermanips.edit', $user->id) }}" class="btn btn-primary">Edit</a> 
+                    &nbsp;
+                    <form action="{{ route('usermanips.destroy', $user->id) }}" method="POST" class="d-inline delete-form">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </form>
+                </td>
+            </tr>
+        @endforeach
+            </tbody>
+        </table>
+                   
+        
+
     </div>
 </body>
 </html>
