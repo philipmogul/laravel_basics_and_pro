@@ -27,6 +27,7 @@
         </p>
 
         <h2> Total Users - {{ $users->count() }}</h2>
+        <h3> <a href="{{ route('chatroom.index') }}" class="btn btn-primary">Go to Chatroom</a></h3>
         
         <table class="table">
             <thead>

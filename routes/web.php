@@ -7,6 +7,7 @@ use App\Models\Post;
 use App\Http\Controllers\CrudSystemController;
 use App\Http\Controllers\UserLoginsAppController;
 use App\Http\Controllers\userManips;
+use App\Models\chatroom;
 
 
 Route::get('/', function () {
@@ -34,6 +35,9 @@ Route::get('/usermanips', [userManips::class, 'index'])->name('usermanips.index'
 Route::get('/edituser/{id}', [userManips::class, 'edit'])->name('usermanips.edit');
 Route::put('/updateuser/{id}', [userManips::class, 'update'])->name('usermanips.update');
 Route::delete('/deleteuser/{id}', [userManips::class, 'destroy'])->name('usermanips.destroy');
+Route::get('/chatroom', function() {
+    return view('chatroom');
+})->name('chatroom.index');
 
 
 require __DIR__.'/auth.php';
