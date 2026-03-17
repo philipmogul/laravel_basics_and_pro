@@ -28,7 +28,7 @@
                 <label for="name" class="form-label">Name</label>
                 <input type="text" class="form-control" name="name" value="{{ $user->name }}">
             </div>
-
+            
             <div class="mb-3">
                 <label for="email" class="form-label">Email</label>
                 <input type="email" class="form-control" name="email" value="{{ $user->email }}">
@@ -37,7 +37,7 @@
             <button type="submit" class="btn btn-primary">Update</button> 
             &nbsp;&nbsp;
             <a href="{{ route('usermanips.index') }}" class="btn btn-secondary">Back to User Manipulations</a>
-            
+
         </form>
     </div>
 

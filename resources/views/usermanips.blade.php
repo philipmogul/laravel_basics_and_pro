@@ -26,7 +26,7 @@
             </ol>
         </p>
 
-        <h2>Users List</h2>
+        <h2> Total Users - {{ $users->count() }}</h2>
         
         <table class="table">
             <thead>
